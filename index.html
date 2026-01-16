@@ -6,29 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-
-<script>
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      const header = document.querySelector('header');
-
-      const headerHeight = header.offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = targetPosition - headerHeight - 10;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    });
-  });
-</script>
-
-
 <body>
 
 <header>
@@ -37,63 +14,71 @@
       <img src="logo.png" alt="Conecta+">
     </div>
 
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     <ul class="menu">
-      <li><a href="#inicio" class="nav-link">Inicio</a></li>
-      <li><a href="#paquetes" class="nav-link">Paquetes</a></li>
-      <li><a href="#servicios" class="nav-link">Servicios</a></li>
-      <li><a href="#contacto" class="nav-link">Contáctanos</a></li>
+      <li><a href="#" onclick="mostrar('inicio')">Inicio</a></li>
+      <li><a href="#" onclick="mostrar('paquetes')">Paquetes</a></li>
+      <li><a href="#" onclick="mostrar('servicios')">Servicios</a></li>
+      <li><a href="#" onclick="mostrar('contacto')">Contáctanos</a></li>
     </ul>
 
     <div class="social-icons">
-      <a href="https://wa.me/50577604006?text=Hola%21%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20este%20servicio%2C%20%C2%BFPodr%C3%ADas%20brindarme%20la%20informaci%C3%B3n%3F" target="_blank"><img src="whatsapp.png"></a>
+      <a href="https://wa.me/50577604006" target="_blank"><img src="whatsapp.png"></a>
       <a href="https://www.instagram.com/conec_ta25" target="_blank"><img src="instagram.png"></a>
       <a href="https://www.facebook.com/share/1FoX1hkf6S" target="_blank"><img src="facebook.png"></a>
     </div>
   </nav>
 </header>
 
-<section class="hero" id="inicio">
-  <h2>Bienvenido a Conecta+</h2>
-  <p>Diseño y publicidad digital</p>
-  <a href="#contacto" class="btn">Contáctanos</a>
-</section>
+<main>
 
-<section id="paquetes">
-  <h2>Paquetes</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Paquete básico</h3>
-      <p>• Página de negocio<br>• Línea gráfica<br>• Copywriting<br>• Logo y portada<br>• 12 post<br>• 1 reel</p>
-    </div>
-    <div class="card">
-      <h3>Paquete intermedio</h3>
-      <p>• Página de negocio<br>• Línea gráfica<br>• Copywriting<br>• Logo y portada<br>• 16 post<br>• 3 reels</p>
-    </div>
-    <div class="card">
-      <h3>Paquete premium</h3>
-      <p>• Página de negocio<br>• Línea gráfica<br>• Copywriting<br>• Logo y portada<br>• 20 post<br>• 4 reels</p>
-    </div>
-  </div>
-</section>
+  <!-- TODAS visibles al cargar -->
+  <section id="inicio" class="page visible hero">
+    <h2>Bienvenido a Conecta+</h2>
+    <p>Diseño y publicidad digital</p>
+    <button class="btn" onclick="mostrar('contacto')">Contáctanos</button>
+  </section>
 
-<section id="servicios">
-  <h2>Servicios</h2>
-  <p>Soluciones digitales profesionales para tu negocio.</p>
-</section>
+  <section id="paquetes" class="page visible">
+    <h2>Paquetes</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Paquete básico</h3>
+        <p>• Página de negocio<br>• Línea gráfica<br>• Copywriting<br>• Logo y portada<br>• 12 post<br>• 1 reel</p>
+      </div>
+      <div class="card">
+        <h3>Paquete intermedio</h3>
+        <p>• Página de negocio<br>• Línea gráfica<br>• Copywriting<br>• Logo y portada<br>• 16 post<br>• 3 reels</p>
+      </div>
+      <div class="card">
+        <h3>Paquete premium</h3>
+        <p>• Página de negocio<br>• Línea gráfica<br>• Copywriting<br>• Logo y portada<br>• 20 post<br>• 4 reels</p>
+      </div>
+    </div>
+  </section>
 
-<section id="contacto" class="contact">
-  <h2>Contáctanos</h2>
-  <form>
-    <input type="text" placeholder="Tu nombre" required>
-    <input type="email" placeholder="Tu correo" required>
-    <textarea rows="5" placeholder="Tu mensaje" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+  <section id="servicios" class="page visible">
+    <h2>Servicios</h2>
+    <p>Soluciones digitales profesionales para tu negocio.</p>
+  </section>
+
+  <section id="contacto" class="page visible contact">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</main>
 
 <footer>
   <p>© 2026 Conecta+ | Todos los derechos reservados</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
