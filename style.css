@@ -53,3 +53,35 @@ body {
 .logo img {
   height: 50px; /*ajusta imagen de logo*/
 }
+
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redes {
+  display: flex;
+  gap: 15px;
+}
+
+.redes img {
+  height: 24px;
+  transition: transform 0.2s;
+}
+
+.redes img:hover {
+  transform: scale(1.2);
+}
+
+
+mi-pagina/
+  index.html
+  style.css
+  img/
+    logo.png
+    whatsapp.png
+    instagram.png
+    facebook.png
