@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +13,9 @@ html, body {
   color: #333;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header {
   position: fixed;
   top: 0;
@@ -35,7 +38,9 @@ header {
   height: 45px;
 }
 
-/* MENU */
+/* =========================
+   MENÚ DESKTOP
+========================= */
 .menu {
   list-style: none;
   display: flex;
@@ -45,11 +50,13 @@ header {
 .menu a {
   color: white;
   font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
 }
 
-/* BOTÓN ☰ */
+/* =========================
+   BOTÓN HAMBURGUESA
+========================= */
 .menu-toggle {
   display: none;
   font-size: 30px;
@@ -57,7 +64,9 @@ header {
   cursor: pointer;
 }
 
-/* REDES */
+/* =========================
+   REDES SOCIALES
+========================= */
 .social-icons {
   display: flex;
   gap: 10px;
@@ -67,7 +76,9 @@ header {
   width: 22px;
 }
 
-/* CONTENIDO */
+/* =========================
+   CONTENIDO GENERAL
+========================= */
 main {
   padding-top: 90px;
 }
@@ -77,6 +88,15 @@ main {
   padding: 90px 20px;
   background: url("https://picsum.photos/1200/600") center/cover no-repeat;
   color: white;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
 }
 
 .btn {
@@ -94,7 +114,9 @@ section {
   padding: 60px 20px;
 }
 
-/* TARJETAS */
+/* =========================
+   TARJETAS
+========================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -108,14 +130,18 @@ section {
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-/* CONTACTO */
+/* =========================
+   CONTACTO
+========================= */
 .contact {
   background: #203a43;
   color: white;
   border-radius: 10px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 20px;
@@ -123,7 +149,9 @@ footer {
   color: white;
 }
 
-/* SPA */
+/* =========================
+   SPA (MOSTRAR / OCULTAR)
+========================= */
 .page {
   display: none;
 }
@@ -132,11 +160,15 @@ footer {
   display: block;
 }
 
+/* =========================
+   RESPONSIVE (MÓVIL)
+========================= */
 @media (max-width: 768px) {
 
   .navbar {
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
 
   /* LOGO CENTRADO */
@@ -148,37 +180,43 @@ footer {
   .menu-toggle {
     display: block;
     position: absolute;
+    top: 18px;
     right: 20px;
-    top: 20px;
   }
 
-  /* MENÚ OCULTO POR DEFECTO */
+  /* MENÚ OCULTO */
   .menu {
     display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
-    background: #203a43;
-    padding: 15px 0;
     gap: 15px;
+
+    /* CUADRO TRANSPARENTE */
+    background: rgba(15, 32, 39, 0.85);
+    backdrop-filter: blur(8px);
+
+    padding: 20px 0;
   }
 
-  /* MENÚ CUANDO SE ABRE */
+  /* MENÚ ACTIVO */
   .menu.show {
     display: flex;
   }
 
-  .menu li {
-    width: 100%;
+  .menu a {
+    color: white;
+    font-size: 18px;
   }
 
-  /* REDES ABAJO, ORDENADAS */
+  /* REDES ABAJO */
   .social-icons {
-    margin-top: 15px;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
+    margin-top: 15px;
   }
 
+  /* TEXTO HERO */
   .hero h2 {
     font-size: 26px;
   }
@@ -187,5 +225,3 @@ footer {
     font-size: 16px;
   }
 }
-
-
