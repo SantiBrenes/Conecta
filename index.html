@@ -6,6 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      const header = document.querySelector('header');
+
+      const headerHeight = header.offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = targetPosition - headerHeight - 10;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+
 <body>
 
 <header>
@@ -15,10 +38,10 @@
     </div>
 
     <ul class="menu">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#Paquetes">Paquetes</a></li>
-      <li><a href="#Servicios">Servicios</a></li>
-      <li><a href="#contacto">Contáctanos</a></li>
+      <li><a href="#inicio" class="nav-link">Inicio</a></li>
+      <li><a href="#paquetes" class="nav-link">Paquetes</a></li>
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="#contacto" class="nav-link">Contáctanos</a></li>
     </ul>
 
     <div class="social-icons">
@@ -35,7 +58,7 @@
   <a href="#contacto" class="btn">Contáctanos</a>
 </section>
 
-<section id="Paquetes">
+<section id="paquetes">
   <h2>Paquetes</h2>
   <div class="cards">
     <div class="card">
@@ -53,7 +76,7 @@
   </div>
 </section>
 
-<section id="Servicios">
+<section id="servicios">
   <h2>Servicios</h2>
   <p>Soluciones digitales profesionales para tu negocio.</p>
 </section>
