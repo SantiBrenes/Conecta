@@ -1,107 +1,178 @@
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #f4f6f9; color: #333; }
-    header { background: linear-gradient(90deg, #0f2027, #203a43, #2c5364); padding: 20px; color: white; }
-    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: auto; }
-    nav h1 { font-size: 24px; }
-    nav ul { list-style: none; display: flex; gap: 20px; }
-    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
-    nav ul li a:hover { text-decoration: underline; }
-    .hero { text-align: center; padding: 80px 20px; background: url('https://picsum.photos/1200/600') center/cover no-repeat; color: white; }
-    .hero h2 { font-size: 40px; margin-bottom: 10px; }
-    .hero p { font-size: 18px; margin-bottom: 20px; }
-    .hero button { padding: 12px 25px; border: none; background: #ff9800; color: white; font-size: 16px; cursor: pointer; border-radius: 5px; }
-    .hero button:hover { background: #e68900; }
-    section { max-width: 1100px; margin: 60px auto; padding: 20px; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { margin-bottom: 10px; color: #2c5364; }
-    .contact { background: #203a43; color: white; border-radius: 10px; }
-    .contact form { display: grid; gap: 15px; }
-    .contact input, .contact textarea { padding: 10px; border-radius: 5px; border: none; }
-    .contact button { background: #ff9800; border: none; padding: 12px; color: white; font-size: 16px; cursor: pointer; border-radius: 5px; }
-    .contact button:hover { background: #e68900; }
-    footer { text-align: center; padding: 20px; background: #0f2027; color: white; }
-  </style>
-
-
-
-  section {
-  display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#inicio {
-  display: block;
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
 }
 
-
-
-
+/* HEADER */
 header {
   position: fixed;
   top: 0;
   width: 100%;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
   z-index: 1000;
 }
 
-body {
-  padding-top: 80px; /* para que no se tape el contenido */
-}
-
-
-.logo img {
-  height: 50px; /*ajusta imagen de logo*/
-}
-
-
-
-nav {
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.redes {
+.logo img {
+  height: 45px;
+}
+
+.menu {
+  list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
-.redes img {
-  height: 24px;
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 22px;
   transition: transform 0.2s;
 }
 
-.redes img:hover {
+.social-icons img:hover {
   transform: scale(1.2);
 }
 
+/* PARA QUE NO TAPE EL HEADER */
+body {
+  padding-top: 80px;
+}
 
-mi-pagina/
-  index.html
-  style.css
-    logo.png
-    whatsapp.png
-    instagram.png
-    facebook.png
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: url("https://picsum.photos/1200/600") center/cover no-repeat;
+  color: white;
+}
 
+.hero h2 {
+  font-size: 40px;
+}
 
-    max-width: 1100px;          /*ajusta la pantalla a cualquier dispositivo*/
-width: 100%;
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
 
+.btn {
+  display: inline-block;
+  background: #ff9800;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+}
 
-@media (max-width: 768px) {         /*Hace el menú adaptable*/
-  nav {
+.btn:hover {
+  background: #e68900;
+}
+
+/* SECCIONES */
+section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+/* TARJETAS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #2c5364;
+}
+
+/* CONTACTO */
+.contact {
+  background: #203a43;
+  color: white;
+  border-radius: 10px;
+}
+
+.contact form {
+  display: grid;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact button {
+  background: #ff9800;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f2027;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
     flex-direction: column;
     gap: 10px;
   }
 
-  .redes {
+  .menu {
+    flex-wrap: wrap;
     justify-content: center;
   }
 
-  ul {
-    flex-wrap: wrap;
+  .social-icons {
     justify-content: center;
   }
 
@@ -114,47 +185,7 @@ width: 100%;
   }
 }
 
-
-
-img {                           /*ajusta imagenes*/
+img {
   max-width: 100%;
   height: auto;
 }
-
-
-header, nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* permite que baje de línea si no cabe */
-}
-
-
-
-.social-icons {
-  display: flex;
-  gap: 10px;
-}
-
-.social-icons img {
-  width: 24px;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  .menu {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-
-
