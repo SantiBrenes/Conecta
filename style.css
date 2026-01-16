@@ -132,28 +132,60 @@ footer {
   display: block;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
 
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* LOGO CENTRADO */
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  /* BOTÓN ☰ VISIBLE */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  /* MENÚ OCULTO POR DEFECTO */
   .menu {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: #203a43;
     text-align: center;
+    background: #203a43;
+    padding: 15px 0;
+    gap: 15px;
   }
 
+  /* MENÚ CUANDO SE ABRE */
   .menu.show {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
+  .menu li {
+    width: 100%;
   }
 
+  /* REDES ABAJO, ORDENADAS */
   .social-icons {
-    width: 100%;
+    margin-top: 15px;
     justify-content: center;
-    margin-top: 10px;
+    width: 100%;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }
+
+
