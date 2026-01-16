@@ -226,16 +226,14 @@ footer {
     font-size: 20px;
   }
 
-  /* REDES ABAJO */
+  /* REDES arriba */
   .social-icons {
-    position: fixed;
-    bottom: 30px;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    gap: 20px;
-    z-index: 9500;
-  }
+  position: relative;
+  margin-top: 10px;
+  justify-content: center;
+  width: 100%;
+  z-index: 1001;
+}
 
   /* TEXTO */
   .hero h2 {
@@ -246,3 +244,6 @@ footer {
     font-size: 16px;
   }
 }
+
+
+
