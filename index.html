@@ -17,10 +17,10 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <ul class="menu">
-      <li><a href="#" onclick="mostrar('inicio')">Inicio</a></li>
-      <li><a href="#" onclick="mostrar('paquetes')">Paquetes</a></li>
-      <li><a href="#" onclick="mostrar('servicios')">Servicios</a></li>
-      <li><a href="#" onclick="mostrar('contacto')">Contáctanos</a></li>
+      <li><a onclick="mostrar('inicio')">Inicio</a></li>
+      <li><a onclick="mostrar('paquetes')">Paquetes</a></li>
+      <li><a onclick="mostrar('servicios')">Servicios</a></li>
+      <li><a onclick="mostrar('contacto')">Contáctanos</a></li>
     </ul>
 
     <div class="social-icons">
@@ -33,14 +33,14 @@
 
 <main>
 
-  <!-- TODAS visibles al cargar -->
-  <section id="inicio" class="page visible hero">
+  <!-- TODAS VISIBLES AL CARGAR -->
+  <section id="inicio" class="page show hero">
     <h2>Bienvenido a Conecta+</h2>
     <p>Diseño y publicidad digital</p>
     <button class="btn" onclick="mostrar('contacto')">Contáctanos</button>
   </section>
 
-  <section id="paquetes" class="page visible">
+  <section id="paquetes" class="page show">
     <h2>Paquetes</h2>
     <div class="cards">
       <div class="card">
@@ -58,12 +58,12 @@
     </div>
   </section>
 
-  <section id="servicios" class="page visible">
+  <section id="servicios" class="page show">
     <h2>Servicios</h2>
     <p>Soluciones digitales profesionales para tu negocio.</p>
   </section>
 
-  <section id="contacto" class="page visible contact">
+  <section id="contacto" class="page show contact">
     <h2>Contáctanos</h2>
     <form>
       <input type="text" placeholder="Tu nombre" required>

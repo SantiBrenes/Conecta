@@ -1,18 +1,11 @@
 function mostrar(id) {
-  const secciones = document.querySelectorAll('.page');
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('show'));
 
-  secciones.forEach(sec => {
-    sec.classList.remove('visible');
-  });
+  document.getElementById(id).classList.add('show');
 
-  document.getElementById(id).classList.add('visible');
-
-  document.querySelector('.menu').classList.remove('show');
-
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  const menu = document.querySelector('.menu');
+  menu.classList.remove('show');
 }
 
 function toggleMenu() {
