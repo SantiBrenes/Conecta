@@ -171,52 +171,61 @@ footer {
     position: relative;
   }
 
-  /* LOGO CENTRADO */
+  /* LOGO */
   .logo {
     margin-bottom: 10px;
   }
 
-  /* BOTÓN ☰ VISIBLE */
+  /* BOTÓN ☰ */
   .menu-toggle {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 18px;
     right: 20px;
+    z-index: 3000;
   }
 
-  /* MENÚ OCULTO */
+  /* MENÚ HAMBURGUESA (CAPA REAL) */
   .menu {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    gap: 15px;
+    height: 100vh;
 
-    /* CUADRO TRANSPARENTE */
+    z-index: 2500;
+
     background: rgba(15, 32, 39, 0.85);
-    backdrop-filter: blur(8px);
-
-    padding: 20px 0;
+    backdrop-filter: blur(10px);
   }
 
-  /* MENÚ ACTIVO */
+  /* CUANDO SE ABRE */
   .menu.show {
     display: flex;
   }
 
   .menu a {
     color: white;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   /* REDES ABAJO */
   .social-icons {
+    position: fixed;
+    bottom: 25px;
+    left: 0;
     width: 100%;
     justify-content: center;
-    margin-top: 15px;
+    gap: 20px;
+    z-index: 2600;
   }
 
-  /* TEXTO HERO */
   .hero h2 {
     font-size: 26px;
   }
