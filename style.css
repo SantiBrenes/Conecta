@@ -165,10 +165,18 @@ footer {
 ========================= */
 @media (max-width: 768px) {
 
+  /* HEADER */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
   .navbar {
+    position: relative;
     flex-direction: column;
     align-items: center;
-    position: relative;
   }
 
   /* LOGO */
@@ -176,38 +184,41 @@ footer {
     margin-bottom: 10px;
   }
 
-  /* BOTÓN ☰ */
+  /* BOTÓN ☰ (FORZADO) */
   .menu-toggle {
-    display: block;
+    display: block !important;
     position: fixed;
     top: 18px;
     right: 20px;
-    z-index: 3000;
+    z-index: 9999;
+    font-size: 30px;
   }
 
-  /* MENÚ HAMBURGUESA (CAPA REAL) */
+  /* MENÚ MÓVIL (FORZADO A PINTAR) */
   .menu {
-    display: none;
+    display: none !important;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    z-index: 2500;
-
     background: rgba(15, 32, 39, 0.85);
     backdrop-filter: blur(10px);
+
+    z-index: 9000;
   }
 
   /* CUANDO SE ABRE */
   .menu.show {
-    display: flex;
+    display: flex !important;
   }
 
   .menu a {
@@ -218,14 +229,15 @@ footer {
   /* REDES ABAJO */
   .social-icons {
     position: fixed;
-    bottom: 25px;
+    bottom: 30px;
     left: 0;
     width: 100%;
     justify-content: center;
     gap: 20px;
-    z-index: 2600;
+    z-index: 9500;
   }
 
+  /* TEXTO */
   .hero h2 {
     font-size: 26px;
   }
